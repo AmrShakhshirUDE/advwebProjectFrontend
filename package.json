@@ -21,10 +21,12 @@
     "react-scripts": "2.0.4",
     "react-strap": "0.0.1",
     "reactstrap": "^8.4.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "div": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
