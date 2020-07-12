@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  background-color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.image {
+  opacity: 1 ;
+  width: 100%;
+  height: auto;
+  transition : all 1s;
+}
+
+.image:hover  {
+  opacity: 1 ;
+}
+
+.search{
+  width: 30px;
+  height: 30px;
+  /*border: 1px solid #5bc0de;*/
+}
+
+.searchImg{
+   width: 25px;
+   height: 25px;
+  opacity: 0.5;
+  transition: all 0.5s;
+
+}
+
+.searchImg:hover {
+  opacity: 0.7;
+  width: 30px;
+  height: 30px;
+}
+.btn-primary {
+  color: white;
+  border-radius: .5rem;
+  background-color: #5c7d92;
+ border-color: #5c7d92
+}
+.btn-primary:hover {
+  color: black;
+  background-color: #79a6c6;
+  border-color:#79a6c6
+}
+
+.btn-dark {
+  color: whitesmoke;
+  border-radius: .5rem;
+  background-color: #ab5952;
+  border-color:#ab5952
+}
+.btn-dark:hover {
+  color: black;
+  background-color: #eb786c;
+  border-color:#eb786c
+}
+
+
+.slogan{
+  opacity: 0.7;
+  font-size: 16pt;
+  color: darkgray;
+  transition:all 1s;
+}
+.slogan:hover {
+  opacity: 1;
+  font-size: 24pt;
+  transition:all 1s;
+  cursor: pointer;
+}
+.postBox{
+  width: 100%;
+  height: inherit;
+  border: solid 1px lightgray;
+  border-radius: 2%;
+  
+}
+
+.divider{
+  width: 100%;
+  height: 1px;
+  border: solid 1px rgb(224, 222, 222);
+}
+.like{
+  opacity: 0.7;
+  width: 30px;
+  transition:all 1s;
+  height:auto;
+}
+.like:hover {
+  opacity: 1;
+  transition:all 1s;
+  cursor: pointer;
+}
+
+.dislike{
+  opacity: 0.7;
+  width: 30px;
+  transition:all 1s;
+  height:auto;
+}
+.dislike:hover {
+  opacity: 1;
+  transition:all 1s;
+  cursor: pointer;
+}
+
+.vert-align {
+  height: 12%;
+  width: 100%;
+  top:0;
+  position:fixed;
+  z-index:100;
+}
+
+.containerSearch{
+  margin: 0 5%;
+  width: 50%;
+  height:500px;
+  margin: 0 auto;
+  /*border: 1px solid #5bc0de;*/
+
+}
+.downloadTitle{
+  font-size: 10pt;
+  color:gray;
+}
+
+
+.downloadImg{
+  width: 30px;
+ opacity: 0.5;
+ transition: all 0.5s;
+}
+.downloadImg:hover {
+  opacity: 1;
+  cursor: pointer;
+ }
+.searchImg{
+  width: 25px;
+  height: 25px;
+ opacity: 0.5;
+ transition: all 0.5s;
+
+}
+.searchImg:hover {
+ opacity: 0.7;
+ width: 30px;
+ height: 30px;
+}
