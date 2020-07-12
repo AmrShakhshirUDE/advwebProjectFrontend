@@ -115,7 +115,7 @@ export default class Post extends Component {
                     <img src={'images/newpost.jpg'} style={{width:'100%'}} alt="newpost" />
 
                     </div>
-                    <div className="col-md-5 my-3  px-5 " >
+                    <div className="col-md-5 my-5   px-5 " >
                     <form noValidate onSubmit={this.onSubmit}>
                     <h4 className=" my-4 font-weight-normal" style={{color: '#5c7d92', paddingLeft:'40%'}}>New Post</h4>
                         <div className="form-group">

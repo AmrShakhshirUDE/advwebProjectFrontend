@@ -211,12 +211,11 @@ plusLike = (e) => {
         if(!posts.length) return <div className='jumbotron mx-auto mt-3' style={{"width":"70%"}}> <h4 className='text-center'>There is currently no posts yet</h4> </div>
 
         return posts.map((posts,index) => (
-          <Col md={{ span: 3, offset: 1 }}   sm="12">
+          <Col lg={{ span: 3, offset: 1 }}   sm="12">
              
              <div className="jumbotron mt-5 mx-5 " 
-             style={index%2?
-             {"width":"70%","backgroundColor":"white","outlineStyle": "","outlineColor":"","backgroundColor":"#85929E"}:
-             {"width":"70%","backgroundColor":"white","outlineStyle": "","outlineColor":"","backgroundColor":""}}  >
+             style={
+             {"width":"70%","outlineStyle": "solid","outlineWidth":"1px","outlineColor":"#5c7d92","backgroundColor":"white","boxShadow":"5px 5px 5px 5px #dfebf2"}}>
               
                 <div className="row">
                   <div className="col-sm-3 mt-0">
@@ -226,19 +225,18 @@ plusLike = (e) => {
                   </div>
 
                   <div className="col-sm-7 d-flex">
-                    <a className=" " href="/profile" style={{color:'#5c7d92'}} >{posts.username}</a>
-                    <small className="text-muted mt-1 mx-3">{moment(posts.date.$date).format("DD/MMM/YYYY")}</small>
-
-                    
-                  <div className="col-sm-1 mr-2">
+                    <a  className="ml-md-3 " style={{color:'#5c7d92',fontWeight:'bold'}} >{posts.username}<br/>                  
+                    <small className="text-muted mt-1 mx-lg-0 ml-md-3 ">{moment(posts.date.$date).format("DD/MMM/YYYY")}</small>
+                    </a>
+                  <div className="col-sm-1 ml-3" >
                     <h6 className="ml-3" style={{"color": "darkgrey"}}>
                       {posts.like.length}
                     </h6>
                   </div>
-                  <div className="col-sm-1 mx-1">
+                  <div className="col-sm-1 ml-2">
                     <img src={like} className="like" title="like" onClick={()=>this.plusLike(posts._id)}/>
                   </div>
-                  <div className="col-sm-1 mx-1">
+                  <div className="col-sm-1 mx-2">
                     <img src={dislike} className="dislike" title="dislike" onClick={()=>this.plusDisLike(posts._id)}/>
                   </div>
                   <div className="col-sm-1 ml-2">
@@ -249,6 +247,7 @@ plusLike = (e) => {
 
                
                 </div>
+
 
                 </div>
                 <br></br>
@@ -278,14 +277,14 @@ plusLike = (e) => {
                   </div>
                 </div>
 
-                <div className="row postBox mx-0 " style={{"backgroundColor":"whitesmoke"}}>
+                <div className="row postBox mx-0 " style={{"backgroundColor":"#f0f0f0","boxShadow":"4px 4px 4px 4px #f0f0f0"}}>
 
                 {posts.comments.map((value, index) => {
                   return(
                     <React.Fragment>
                       <div className="row" >
                           <div className="col-sm-8">
-                            <a className="mt-2 ml-2 small" href="#" style={{color:'#5c7d92'}}>{posts.comments[index]['username']}</a>
+                            <a className="mt-2 ml-2 small"  style={{color:'#5c7d92',fontWeight:"bold"}}>{posts.comments[index]['username']}</a>
                             <small className="text-muted mx-3">{moment(posts.comments[index].date.$date).format("DD/MMM/YYYY")}</small>
                           </div>
                       </div>
@@ -329,7 +328,7 @@ plusLike = (e) => {
           <React.Fragment >
 
             <Container onClick={e=>{this.setState({ displaylikemsg : '',displaydislikemsg : ''})}}>
-             <Row className="mt-5 float-right ">
+             <Row className="mt-5 float-lg-right mx-auto">
                <div class="card" style={{"width": "18rem"}}>
                  <img class="card-img-top" src={'images/sidebar.jpg'} alt="Card image cap" />
                  <div class="card-body">

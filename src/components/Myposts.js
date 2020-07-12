@@ -38,8 +38,7 @@ export default  class AllPosts extends Component {
          deleteBoxModalOpen:false,
 
     }
-    // this.updatePost = this.updatePost.bind(this)
-    // this.deletePost = this.deletePost.bind(this);
+
 
     
 }
@@ -81,7 +80,6 @@ export default  class AllPosts extends Component {
       title: posts.title,
       content: posts.content,
       category: posts.category,
-     // file: posts.file
     })
     }
     toggleModal1(posts){
@@ -123,7 +121,6 @@ export default  class AllPosts extends Component {
               'Open': false
             })
             
-            //  window.location='/mypost'
 
         })
 }
@@ -131,13 +128,11 @@ export default  class AllPosts extends Component {
 
 
     updatePost=(e)=>{
-      //let file = this.state.file
       let title = this.state.title
       let content = this.state.content
       let category = this.state.category
       let id = e.$oid
       let formdata = new FormData()
-     // formdata.append('file',file)
       formdata.append('id',id)
       formdata.append('category',category)
       formdata.append('title',title)
@@ -153,7 +148,6 @@ export default  class AllPosts extends Component {
         data: formdata
       }).then((response) => {
     
-        // console.log("updated new post!")
 
       this.getMyPost()
 
@@ -161,7 +155,6 @@ export default  class AllPosts extends Component {
 
         'modalIsOpen': false
       })
-      //window.location = '/mypost';
 
      });  
     }
@@ -184,7 +177,6 @@ export default  class AllPosts extends Component {
         'msg': response.data.msg,
         'deleteBoxModalOpen': false
       })
-        // window.location = '/mypost';
       });        
     } 
 
@@ -227,7 +219,7 @@ export default  class AllPosts extends Component {
 
             <Row> 
                 <Col md={{ span: 3, offset: 2 }}   sm="12">
-              <div className=" jumbotron mt-5" style={{"width":"70%","backgroundColor":"white"}}>
+              <div className=" jumbotron mt-5" style={{"width":"70%","backgroundColor":"white","outlineStyle": "solid","outlineWidth":"1px","outlineColor":"#5c7d92","backgroundColor":"white","boxShadow":"5px 5px 5px 5px #dfebf2"}}>
               <div className="row">
               <div className="col-sm-3 mt-0">
                     <img src={this.getImage(posts.userImage)} 
@@ -236,12 +228,11 @@ export default  class AllPosts extends Component {
                   </div>
     
                 <div className="col-sm-8">
-          <a className="mt-2 ml-2" href="/profile" style={{color:'#5c7d92'}}>{posts.username}</a>
+          <a className="mt-2 ml-2"  style={{color:'#5c7d92',fontWeight:"bold"}}>{posts.username}</a>
           <small className="text-muted mx-3">{moment(posts.date.$date).format("DD/MMM/YYYY")}</small>
          
 
         <Button className="mx-2" outline color="info" size="sm" onClick={()=>this.toggleModal(posts)}>Update</Button>
-        {/* <Button outline color="danger" size="sm" onClick={()=>this.deletePost(posts._id)} >Delete Post</Button> */}
         <Button outline color="danger" size="sm" onClick={()=>this.toggledeleteModal(posts)} >Delete Post</Button>
 
                 </div>
@@ -250,7 +241,7 @@ export default  class AllPosts extends Component {
               <hr />
               <div className="row">
                 <div className="col-sm-7">
-                  <h2 className="text-left ml-3">{posts.title}</h2>
+                  <h2 className="text-left ml-3" style={{color:'black'}}>{posts.title}</h2>
                 </div>
                 <div className="col-sm-1 ">
                     <h6 className="ml-3" style={{"color": "darkgrey"}}>
@@ -293,7 +284,7 @@ export default  class AllPosts extends Component {
   
             {/* comment box */}
   
-              <div className="row postBox mx-0 " style={{"backgroundColor":"whitesmoke"}}>
+              <div className="row postBox mx-0 " style={{"backgroundColor":"#f0f0f0","boxShadow":"4px 4px 4px 4px #f0f0f0"}}>
   
 
 {posts.comments.map((value, index) => {
@@ -301,7 +292,7 @@ export default  class AllPosts extends Component {
     <React.Fragment>
       <div className="row">
           <div className="col-sm-8">
-            <a className="mt-2 ml-2 small" href="/profile" style={{color:'#5c7d92'}}>{posts.comments[index]['username']}</a>
+            <a className="mt-2 ml-2 small"  style={{color:'#5c7d92',fontWeight:"bold"}}>{posts.comments[index]['username']}</a>
             <small className="text-muted mx-3">{moment(posts.comments[index].date.$date).format("DD/MMM/YYYY")}</small>
           </div>
       </div>
@@ -331,8 +322,7 @@ export default  class AllPosts extends Component {
     
     render () {
         
-      //const requiredItem = this.state.requiredItem;
-      //let modalData = this.state.posts[requiredItem];
+    
       
             return (
 
@@ -364,7 +354,7 @@ export default  class AllPosts extends Component {
                         <div className="form-group">
         <label htmlFor="category">Category</label>
                             <Input type="select" name="category" id="category" placeholder={this.state.category} onChange={e => {this.setState({'category': e.target.value})}}>
-                            <option value="Advance Web Technology"></option>
+                            <option value="" disabled selected>Choose Category</option>
                             <option value="Advance Web Technology">Advance Web Technology</option>
                             <option value="Peer to Peer">Peer to Peer</option>
                             <option value="Internet of Things">Internet of Things</option>
