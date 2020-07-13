@@ -7,12 +7,27 @@ import * as jwtDecode from 'jwt-decode';
 
 
 class Navbar extends Component {
-    constructor(){
-        super()
+
+
+
+    
+    constructor(props){
+        super(props)
+        this.toggleNavbar = this.toggleNavbar.bind(this);
+
         this.state={
-            'serverUrl': UrlContext._currentValue        
+            'serverUrl': UrlContext._currentValue    ,
+            collapsed: true,
+    
         }
     }
+
+    
+    toggleNavbar() {
+        this.setState({
+        collapsed: !this.state.collapsed,
+        });
+        }
 
     logOut (e) {
      
@@ -25,12 +40,12 @@ class Navbar extends Component {
         const loginRegLink = (
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <Link to="/login" className="nav-link font-weight-bolder">
+                    <Link to="/login" className="nav-link font-weight-bolder text-secondary">
                         Login
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/register" className="nav-link  font-weight-bolder">
+                    <Link to="/register" className="nav-link  font-weight-bolder text-secondary">
                         Register
                     </Link>
                 </li>
@@ -40,23 +55,23 @@ class Navbar extends Component {
         const userLink = (
             <ul className="navbar-nav">
                  <li className="nav-item">
-                    <Link to="/Allpost" className="nav-link  font-weight-bolder">
+                    <Link to="/Allpost" className="nav-link  font-weight-bolder text-secondary">
                         All Posts
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/profile" className="nav-link  font-weight-bolder">
+                    <Link to="/profile" className="nav-link  font-weight-bolder text-secondary">
                         User Account
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/post" className="nav-link  font-weight-bolder">
+                    <Link to="/post" className="nav-link  font-weight-bolder text-secondary">
                         Add Post
                     </Link>
                 </li>
                
                 <li className="nav-item">
-                    <Link to="/mypost" className="nav-link  font-weight-bolder">
+                    <Link to="/mypost" className="nav-link  font-weight-bolder text-secondary">
                         My Posts
                     </Link>
                 </li>
@@ -71,10 +86,15 @@ class Navbar extends Component {
         
         )
 
+        const collapsed = this.state.collapsed;
+        const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
+        const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
+
         return (
             
-            <nav  className="navbar navbar-expand-md navbar-dark rounded vert-align" style={{backgroundColor : '#01061c', color : 'white'}}>
-                <button className="navbar-toggler"
+            <nav  className="navbar navbar-expand-md navbar-dark rounded vert-align" style={{backgroundColor : '#01061c', color : 'grey'}}>
+                <button onClick={this.toggleNavbar} className={`${classTwo}`}
+                    className="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
                     data-target="#navbar1"
@@ -93,7 +113,7 @@ class Navbar extends Component {
 
 
                 <div className="collapse navbar-collapse justify-content-md-start"
-                    id="navbar1">
+                    id="navbar1" className={`${classOne}`}>
                     
                     {localStorage.usertoken ? userLink : loginRegLink}
                 </div>

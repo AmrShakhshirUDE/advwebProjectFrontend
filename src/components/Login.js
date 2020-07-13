@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { UrlContext } from '../contexts/urlContext';
 
 
+
 class Login extends Component {
     constructor() {
         super()
@@ -35,8 +36,10 @@ class Login extends Component {
                 this.setState({
                     "result":response.data.msg
                 })
+                if (this.state.result==null){
                 localStorage.setItem('usertoken', response.data.token)
-                return response.data.token
+                return response.data.token}
+              
                 
             })
             .catch(err => {
@@ -58,7 +61,6 @@ class Login extends Component {
             }
             else 
                 return this.state.result           
-             //this.props.history.push(`/home`)
 
             
              
@@ -69,13 +71,7 @@ class Login extends Component {
 
 
 
-        /* this.login(user).then(res => {
-            if (!res.error) {
-                this.props.history.push(`/home`)
-            }
-            else {
-                this.props.history.push(`/register`)
-            }*/
+       
                    
     
 
@@ -114,7 +110,9 @@ class Login extends Component {
                                     value={this.state.password}
                                     onChange={this.onChange} />
                             </div>
-                            <div className=" my-2" style={{color:'#E67E22'}}> {this.state.result}</div>
+                          
+
+                            <div className=" my-2" style={{color:'red'}}> {this.state.result}</div>
                             <button type="submit" className="btn btn-lg btn-primary btn-block">
                                 Log In
                             </button>

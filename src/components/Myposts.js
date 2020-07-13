@@ -332,7 +332,7 @@ export default  class AllPosts extends Component {
                     <div className="blog mt-5 mx-auto">
                       <div className='container'>
                        <h2 className="mx-auto offset-lg-6 ml-5">  </h2>
-                       <div className="mx-auto offset-lg-6 ml-5 font-weight-bold">{this.state.msg}</div>
+                       <div className="mx-auto offset-lg-6 ml-5 font-weight-bold text-success">{this.state.msg}</div>
                        </div>
                         {this.displayMyPost(this.state.posts)}
                     </div>

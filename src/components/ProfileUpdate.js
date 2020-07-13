@@ -107,6 +107,9 @@ export default class ProfileUpdate extends Component{
             }
             
         }).then(response => {
+            this.setState({
+                msg:response.data.msg
+            })
             console.log('image changed2:',imgState)
             
             if (response.data.success ==='true' || imgState==='imgUploaded') {
@@ -144,7 +147,7 @@ export default class ProfileUpdate extends Component{
                 
                 <div className="" style={{"display":"flex", "justifyContent": "center", "alignItems": "center"}}>
                     {/* <label>Chane Image</label><br/> */}
-                    <input className="my-2 btn btn-secondary btn-xs" 
+                    <input  className="my-2 btn btn-primary btn-xs" 
                     type="file" name="file"
                     accept="image/png, image/jpeg" onChange={(e)=>this.handleFile(e)}/>
                     {/* Change Image</button> */}
@@ -186,8 +189,8 @@ export default class ProfileUpdate extends Component{
 
                             </td>
                             </tr>
-                            <p>{this.state.msg}</p>
-                        
+                            <div className=" my-2" style={{color:'red'}}> {this.state.msg}</div>
+
 
                         </tbody>
                     </table>
