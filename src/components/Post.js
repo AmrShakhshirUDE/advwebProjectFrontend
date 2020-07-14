@@ -148,7 +148,7 @@ export default class Post extends Component {
                         
                       <div className="">
                           <label style={{color: '#5c7d92', marginRight:'2%'}}> Select File</label>
-                          <input className="mb-2 "type="file" name="file"
+                          <input className="mb-2 " type="file" name="file"
                           accept="image/png, image/jpeg, .zip,.rar,.7zip, .pdf"
                           onChange={(e)=>this.handleFile(e)} />
                           </div>

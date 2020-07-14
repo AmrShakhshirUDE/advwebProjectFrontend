@@ -394,8 +394,10 @@ export default  class AllPosts extends Component {
                       <div className="my-3">
                           <label> Select File</label>
                           
-                          <input className="mb-2 "type="file" 
- name="file" onChange={(e)=>this.handleFile(e)} />
+                          <input className="mb-2 "type="file"
+                          accept="image/png, image/jpeg, .zip,.rar,.7zip, .pdf"
+                          name="file" onChange={(e)=>this.handleFile(e)} /> 
+ 
                           </div>                   
                         <button type="submit" onClick={()=>this.updateFile(this.state.id)}  className="btn btn-lg btn-primary btn-block">
                             Update
