@@ -120,11 +120,12 @@ class Navbar extends Component {
 
                 <div>
               
-              <div className="search justify-content-md-end mr-4">
+             {/* <div className="search justify-content-md-end mr-4">
               
                       <Link to="/Search">   
                       <img className="searchImg" src={require ('../assets/images/search.png')} title={"search"} alt={"search"}/></Link>
-              </div>                    
+              </div>                     */}
+              
 
               </div>
             </nav>
