@@ -85,11 +85,11 @@ class Login extends Component {
 
                 {/* <div className="row mt-5 jumbotron "> */}
                 <div className="row w-100 ">
-                    <div className="col-md-8 px-0">
+                    <div className="col-md-8 col-sm-12 px-0">
                     <img src={'images/registerimage.jpg'} style={{width:'100%'}} alt="registerimg" />
 
                     </div>
-                    <div className="col-md-4  w-100  mx-auto " >
+                    <div className="col-md-4 col-sm-12  w-100  mx-auto " >
                         <form noValidate onSubmit={this.onSubmit} className=" align-items-center mt-5 py-5 px-5">
                         <h4 className=" my-4 font-weight-normal" style={{color: '#5c7d92', paddingLeft:'40%'}}>Log In</h4>
                             <div className="form-group">

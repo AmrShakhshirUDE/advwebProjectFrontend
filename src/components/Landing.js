@@ -17,7 +17,7 @@ export default class Landing extends Component {
                 <Slider/> 
 
                 
-                <Row className="justify-content-md-center mt-5 ">
+                <Row className="justify-content-sm-center mt-5 ">
                     <div className="col-sm-3">
                         <Card style={{'border': 'none','background-color': 'whitesmoke'}}>
                             <CardImg top style={{'width': '25%', 'margin':'0 auto'}} width="100%" src={require ('../assets/images/aboutus.png')} alt="aboutus" />
